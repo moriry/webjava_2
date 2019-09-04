@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+   <title>RPG</title>
+<!-- Start Cascading Style Sheets -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<!-- End Cascading Style Sheets -->
+</head>
+
+<body>
+<!-- Contents -->
+<div class="container">
+    <div class="mt-6 p-3">
+         <div class="font-weight-bold">
+             キャラ作成
+         </div>
+        <form th:action="@{/create}" th:object="${characterForm}" method="POST">
+         <div class="mt-6 col-6">
+            <b>職業:　</b>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <label><input type="radio" name="job" id="warrior" value="戦士"  checked="" th:field="*{job}"> 戦士</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <label><input type="radio" name="job" id="wizard" value="魔法使い" th:field="*{job}"> 魔法使い</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <label><input type="radio" name="job" id="fighter" value="武闘家" th:field="*{job}"> 武闘家</label>
+                </div>
+        </div>
+        <div class="mt-6 col-6">
+            <b>名前:　</b>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <label><input type="text" class="form-control form-1line" th:field="*{name}"></label>
+                </div>
+        </div>
+        <div class="mt-6 col-2">
+                <button type="submit" class="btn btn-primary btn-primary-cu">次へ</button>
+        </div>
+        </form>
+     </div>
+</div>
+</body>
+
+</html>

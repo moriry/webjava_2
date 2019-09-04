@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+   <title>RPG</title>
+<!-- Start Cascading Style Sheets -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<!-- End Cascading Style Sheets -->
+</head>
+
+<body>
+    <!-- Contents -->
+        <div class="container">
+            <div class="mt-6 p-3">
+                <form th:object="${commandDto}" method="POST">
+                    <div class="mt-6 col-6">
+                    <b>職業:　</b>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <label><input type="text" class="form-control form-1line" th:field="*{job}" readonly="readonly"></label>
+                        </div>
+                   </div>
+                   <div class="mt-6 col-6">
+                   <b>名前:　</b>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <label><input type="text" class="form-control form-1line" th:field="*{name}" readonly="readonly" ></label>
+                        </div>
+                   </div>
+                </form>
+                <div class="d-flex mt-3">
+                <form th:action="@{/fight}" method="POST">
+                    <div class="mt-6 col-2">
+                        <button type="submit" class="btn btn-primary btn-primary-cu">たたかう</button>
+                    </div>
+                </form>
+                <form th:action="@{/heal}" method="POST">
+                    <div class="mt-6 col-2">
+                        <button type="submit" class="btn btn-primary btn-primary-cu">かいふく</button>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

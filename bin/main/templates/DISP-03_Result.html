@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+   <title>RPGS</title>
+<!-- Start Cascading Style Sheets -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<!-- End Cascading Style Sheets -->
+</head>
+
+<body>
+    <!-- Contents -->
+        <div class="container">
+            <div class="mt-6 p-3">
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <label><p th:text="${resultMessage}"></label>
+                    </div>
+            </div>
+        </div>
+</body>
+
+</html>
